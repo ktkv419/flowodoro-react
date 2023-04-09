@@ -1,0 +1,26 @@
+@import '../../sass/main.scss';
+
+.header {
+  height: 7rem;
+  width: 100%;
+  background-color: var(--color-white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    font-size: 5rem;
+    margin-left: 2rem;
+  }
+
+  & > * {
+    height: 100%;
+  }
+}
+
+.user-nav {
+  flex: 0 0 40%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.4rem;
+}

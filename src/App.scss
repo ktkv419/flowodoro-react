@@ -1,0 +1,13 @@
+@import 'sass/main';
+
+.container {
+  max-width: 90rem;
+  height: 90vh;
+  margin: 2rem auto;
+  background-color: var(--color-black);
+  display: flex;
+  flex-direction: column;
+
+  ///////////////////////////////////// TEMPORARY
+  color: var(--color-white);
+}

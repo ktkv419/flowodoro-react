@@ -1,0 +1,70 @@
+@import '../../../sass/main.scss';
+
+#timer {
+  background-color: var(--color-primary-1);
+}
+
+#settings {
+  background-color: var(--color-primary-2);
+}
+
+#history {
+  background-color: var(--color-primary-3);
+}
+
+.icon-box {
+  flex: 1;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s 0.1s;
+
+  &__title {
+    font-size: 1.5rem;
+    transition: all 0.1s;
+    user-select: none;
+    text-transform: uppercase;
+  }
+
+  &:hover &__title {
+    font-size: 0rem;
+  }
+
+  &__icon {
+    height: 3rem;
+    width: 3rem;
+    transition: all 0.1s;
+    fill: currentColor;
+  }
+
+  &__icon-box:hover &__icon {
+    height: 5rem;
+    width: 5rem;
+  }
+
+  @keyframes slide-down {
+    0% {
+      transform: translateY(0%) scale(1);
+    }
+    50% {
+      transform: translateY(100%) scale(0);
+    }
+    51% {
+      transform: translateY(-100%) scale(1);
+    }
+    100% {
+      transform: translateY(0%) scale(1);
+    }
+  }
+
+  .change {
+    animation: slide-down 0.4s;
+  }
+
+  // &__icon-box:active &__icon {
+  //   color: var(--color-grey-dark-1);
+  // }
+}
