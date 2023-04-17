@@ -1,15 +1,17 @@
 @import '../../../sass/main.scss';
 
-#timer {
-  background-color: var(--color-primary-1);
-}
-
-#settings {
-  background-color: var(--color-primary-2);
-}
-
-#history {
-  background-color: var(--color-primary-3);
+.active {
+  background-color: var(--color-black-lighter);
+  // @include pageFadeInAnimation;
+  .icon-box {
+    &__title {
+      color: var(--color-white);
+    }
+    &__icon {
+      animation: iconSlideDown 0.4s;
+      color: var(--color-white);
+    }
+  }
 }
 
 .icon-box {
@@ -20,13 +22,20 @@
   cursor: pointer;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s 0.1s;
+  color: var(--color-primary-1);
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--color-primary-1-lighter);
+  }
 
   &__title {
-    font-size: 1.5rem;
-    transition: all 0.1s;
+    font-size: 1.2rem;
+    transition: font-size 0.1s;
     user-select: none;
     text-transform: uppercase;
+    font-weight: 700;
+    // color: var(--color-white);
   }
 
   &:hover &__title {
@@ -45,26 +54,6 @@
     width: 5rem;
   }
 
-  @keyframes slide-down {
-    0% {
-      transform: translateY(0%) scale(1);
-    }
-    50% {
-      transform: translateY(100%) scale(0);
-    }
-    51% {
-      transform: translateY(-100%) scale(1);
-    }
-    100% {
-      transform: translateY(0%) scale(1);
-    }
-  }
-
-  .change {
-    animation: slide-down 0.4s;
-  }
-
-  // &__icon-box:active &__icon {
-  //   color: var(--color-grey-dark-1);
+  // .change {
   // }
 }

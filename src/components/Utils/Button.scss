@@ -1,0 +1,26 @@
+@import '../../sass/main.scss';
+
+.btn {
+  color: var(--color-white);
+  background-color: var(--color-primary-1);
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &.huge {
+    border-radius: 4rem;
+    font-size: 8rem;
+  }
+
+  &.big {
+    border-radius: 3rem;
+    font-size: 6rem;
+  }
+
+  &.secondary {
+    background-color: #ff0000;
+  }
+}

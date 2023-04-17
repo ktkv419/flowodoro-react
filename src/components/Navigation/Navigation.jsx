@@ -1,21 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Navigation.scss'
-import { Outlet } from 'react-router-dom'
 import MenuButton from './MenuButton/MenuButton'
+import { Link, useLocation } from 'react-router-dom'
 
 const Navigation = () => {
   return (
-    <React.Fragment>
-      <header className="header">
-        <span className="header__logo">Flowodoro</span>
-        <nav className="user-nav">
-          <MenuButton mode={'timer'} />
-          <MenuButton mode={'settings'} />
-          <MenuButton mode={'history'} />
-        </nav>
-      </header>
-      <Outlet />
-    </React.Fragment>
+    <header className="header">
+      <Link className="header__logo" to="/">
+        Flowodoro
+      </Link>
+      <nav className="user-nav">
+        <MenuButton mode={'timer'} />
+        <MenuButton mode={'settings'} />
+        <MenuButton mode={'history'} />
+      </nav>
+    </header>
   )
 }
 

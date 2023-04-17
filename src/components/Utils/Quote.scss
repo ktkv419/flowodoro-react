@@ -1,0 +1,16 @@
+.quote {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  text-align: justify;
+  text-justify: auto;
+  width: 70%;
+
+  &__author {
+    margin-top: 1rem;
+    margin-left: -10%;
+    font-style: italic;
+  }
+}

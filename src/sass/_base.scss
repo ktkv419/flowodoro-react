@@ -8,10 +8,27 @@
 
 html {
   font-size: 62.5%; // 1rem = 10px
+  overflow: hidden;
+  -webkit-text-size-adjust: none;
+  @media (max-width: 87.5em) {
+    font-size: 50%;
+  }
 }
 
 body {
   box-sizing: border-box;
-  background-color: var(--color-black);
-  color: var(--color-black);
+  background-color: var(--color-black-darker);
+  color: var(--color-white);
+}
+
+a,
+a:active,
+a:visited {
+  text-decoration: none;
+  // color: inherit;
+}
+
+::selection {
+  background-color: var(--color-primary-1);
+  color: inherit;
 }

@@ -1,0 +1,83 @@
+@import '../../../sass/main.scss';
+
+.settings {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    font-size: 6rem;
+    margin-bottom: 4rem;
+  }
+
+  font-size: 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+
+  .btn {
+    margin-top: 7rem;
+    align-self: center;
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 2rem;
+
+    input[type='checkbox'] {
+      position: relative;
+      width: 6rem;
+      height: 3rem;
+      appearance: none;
+      background-color: var(--color-black);
+      border-radius: 2rem;
+      box-shadow: inset 0 0 1rem rgba($color: #000000, $alpha: 0.4);
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 2.5rem;
+        height: 2.5rem;
+        background-color: var(--color-white);
+        top: 50%;
+        transform: translate(-100%, -50%);
+        border-radius: 50%;
+        transition: 0.5s;
+      }
+
+      &:checked {
+        background-color: var(--color-primary-1);
+        &::before {
+          background-color: var(--color-white);
+          transform: translate(0, -50%);
+        }
+      }
+    }
+
+    &__input {
+      text-align: center;
+
+      font-size: 4rem;
+      font-weight: 700;
+
+      margin-left: auto;
+      width: 3ch;
+      background: none;
+      border: none;
+      outline: none;
+      color: var(--color-primary-1);
+    }
+
+    &.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+}

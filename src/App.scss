@@ -2,12 +2,44 @@
 
 .container {
   max-width: 90rem;
-  height: 90vh;
+
+  // 1400px for small laptop
+  @media (max-width: 87.5em) {
+    max-width: 80rem;
+  }
+
   margin: 2rem auto;
   background-color: var(--color-black);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0rem 0rem 3rem rgba($color: #000000, $alpha: 1);
 
-  ///////////////////////////////////// TEMPORARY
-  color: var(--color-white);
+  @media (max-width: 41.25em) {
+    margin: 0 0;
+    border-radius: 0px;
+    height: 100vh;
+  }
+}
+
+.screen {
+  position: relative;
+
+  aspect-ratio: 1/0.9;
+  @media (max-width: 41.25em) {
+    aspect-ratio: unset;
+  }
+
+  background-color: var(--color-black-lighter);
+  flex-grow: 1;
+
+  &.animate-slide-down {
+    @include pageSlideDownAnimation;
+    // @include pageFadeInAnimation;
+  }
+
+  &.animate-fade-in {
+    @include pageFadeInAnimation;
+  }
 }

@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import settingsSlice from '../components/Settings/settingsSlice'
+import timerSlice from './timerSlice'
 
 export default configureStore({
   reducer: {
-    settings: settingsSlice,
+    timer: timerSlice,
   },
 })

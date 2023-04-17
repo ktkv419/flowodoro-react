@@ -1,0 +1,9 @@
+@import './base';
+
+@mixin pageSlideDownAnimation {
+  animation: pageSlideDown 0.5s;
+}
+
+@mixin pageFadeInAnimation {
+  animation: pageFadeIn 1s;
+}

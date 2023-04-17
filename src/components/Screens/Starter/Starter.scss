@@ -1,0 +1,99 @@
+@import '../../../sass/main.scss';
+
+.starter {
+  &.screen {
+    background-color: var(--color-black) !important;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__content {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+      font-size: 8rem;
+      letter-spacing: 0.5rem;
+      line-height: 1;
+      text-transform: uppercase;
+      @media (max-width: 41.25em) {
+        font-size: 4rem;
+      }
+
+      span {
+        cursor: default;
+        display: inline-block;
+        &:hover {
+          animation: jello-vertical 0.9s both infinite;
+        }
+      }
+    }
+
+    h3 {
+      font-weight: 300;
+      font-size: 2.4rem;
+      letter-spacing: 0.12rem;
+      transition: letter-spacing 15s;
+      text-align: center;
+      cursor: default;
+
+      @media (max-width: 41.25em) {
+        font-size: 1.4rem;
+      }
+
+      &:hover {
+        letter-spacing: 0.9rem;
+      }
+    }
+
+    p {
+      text-align: justify;
+      hyphens: auto;
+      width: 80%;
+      margin-top: 4rem;
+      font-size: 2rem;
+
+      a {
+        color: var(--color-primary-1);
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: var(--color-black-lighter);
+  margin-top: auto;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-items: end;
+  align-items: center;
+
+  &__text {
+    font-size: 1.5rem;
+    color: var(--color-black-lightest);
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--color-primary-1);
+    }
+  }
+
+  &__icon-box {
+    margin-top: 1rem;
+
+    &__item {
+      width: 3rem;
+      height: 3rem;
+      fill: var(--color-black-lightest);
+      transition: fill 0.2s;
+
+      &:hover {
+        fill: var(--color-primary-1);
+      }
+    }
+  }
+}

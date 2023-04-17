@@ -1,26 +1,32 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './MenuButton.scss'
+import { Link, useLocation } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const MenuButton = ({ mode }) => {
+  const [active, setActive] = useState(false)
   const iconRef = useRef()
 
-  const animateButton = (btn) => {
-    iconRef.current.classList.add('change')
-    setTimeout(() => iconRef.current.classList.remove('change'), 500)
-  }
+  const location = useLocation()
+
+  useEffect(() => {
+    location.pathname.startsWith(`/${mode}`)
+      ? setActive(true)
+      : setActive(false)
+  }, [location])
 
   return (
     <React.Fragment>
-      <div
-        className="icon-box"
+      <Link
+        className={`icon-box${active ? ' active' : ''}`}
         id={mode}
-        onClick={(e) => animateButton(e.target)}
+        to={mode}
       >
         <svg className="icon-box__icon" ref={iconRef}>
-          <use xlinkHref={`../../../../public/icons.svg#icon-${mode}`} />
+          <use xlinkHref={`../../../../icons.svg#icon-${mode}`} />
         </svg>
         <span className="icon-box__title">{mode}</span>
-      </div>
+      </Link>
     </React.Fragment>
   )
 }

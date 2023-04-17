@@ -3,14 +3,31 @@
 .header {
   height: 7rem;
   width: 100%;
-  background-color: var(--color-white);
+  // background: linear-gradient(var(--color-black), var(--color-black-lighter));
+  // background: linear-gradient(var(--color-black-lighter), var(--color-black));
+  background-color: var(--color-black);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1000;
 
   &__logo {
+    color: var(--color-primary-1);
     font-size: 5rem;
     margin-left: 2rem;
+    transition: color 0.2s;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 41.25em) {
+      font-size: 3rem;
+    }
+
+    &:hover {
+      color: var(--color-primary-1-lighter);
+    }
   }
 
   & > * {
